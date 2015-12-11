@@ -2,50 +2,76 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta property="og:site_name" content="謝辞ジェネレータ" />
+  <meta property="og:title" content="謝辞ジェネレータ" />
+  <meta property="og:description" content='論文の"ありがとう"を綴る' />
+  <meta property="og:url" content="http://syazi.gomayumax.com" />
+  <meta property="og:image" content="http://syazi.gomayumax.com/og.png" />
+  <meta property="og:type" content="article" />
+
   <title>謝辞ジェネレータ</title>
+
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="syazi.css">
-  <script src="social.js"></script>
+  <link rel="stylesheet" href="slider/css/slider.css">
+ <link rel="stylesheet" href="syazi.css">
+ <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+ <script src="slider/js/bootstrap-slider.js"></script>
+ <script src="sprintf.js"></script>
+ <script src="syazi.js"></script>
+ <script src="social.js"></script>
 </head>
 <body>
   <div id="header" class="jumbotron">
     <h1>謝辞ジェネレータ</h1>
-    <p>謝辞を作るよ</p>
+    <p>論文の"ありがとう"を綴る</p>
   </div>
   <form class="form-horizontal" role="form">
     <div class="form-group">
-      <label for="teacher" class="col-sm-6 control-label"> 
-        卒論の指導担当された先生（教授、准教授等）:
+      <label for="teacher" class="col-sm-5 control-label"> 
+        卒論の指導担当された先生（必須）:
       </label>
-      <div class="col-sm-6">
-        <input type="text" id="teacher" name="teacher" /> 
+      <div class="col-sm-7">
+        <input type="text" id="teacher" name="teacher" placeholder="（例： やまむー准教授）"/> 
       </div>
     </div>
 
     <div class="form-group">
-      <label for="adviser" class="col-sm-6 control-label"> 
-        アドバイス等頂いたそれ以外の先生（他ゼミ・研究室の先生等):
+      <label for="adviser" class="col-sm-5 control-label"> 
+        先輩、後輩、同期等:
       </label>
-      <div class="col-sm-6">
-        <input type="text" id="adviser" name="adviser" />
+      <div class="col-sm-7">
+        <input type="text" id="adviser" name="adviser" placeholder="（例： うたかさん）"/>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="helper" class="col-sm-6 control-label"> 
+      <label for="helper" class="col-sm-5 control-label"> 
         研究（実験）等へ協力して頂いた人々:
       </label>
-      <div class="col-sm-6">
-        <input type="text" id="helper" name="helper" />
+      <div class="col-sm-7">
+        <input type="text" id="helper" name="helper" placeholder="（例： やまむー研のみなさま）"/>
       </div>
     </div>
     
     <div class="form-group">
-      <div class="col-sm-offset-6 col-sm-6">
-        <input type="submit" class="btn btn-primary btn-lg" value="送信" />　
+      <label for="yuru" class="col-sm-5 control-label"> 
+        ゆるさ:
+      </label>
+      <div class="col-sm-7">
+        <input type="text" id="yuru" value="0" data-slider-max="2">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-sm-offset-5 col-sm-7">
+        <input type="submit" class="btn btn-lg" value="マジ感謝" />　
       </div>
     </div>
   </form>
+  <div id="result">
+    <h2>謝辞</h2>
+    <p></p>
+  </div>
   <div id="footer">
     <div class="share-buttons">
       <a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">Tweet</a>
